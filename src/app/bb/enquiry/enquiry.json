@@ -1,0 +1,46 @@
+[
+  {
+    "propertyAddress": "South Devon, England, UK",
+    "checkInDate": "2024-06-18T18:15:27.145Z",
+    "checkOutDate": "2024-06-20T23:00:00.000Z",
+    "numberOfNights": 2,
+    "name": "john doe",
+    "email": "abc@gmail.com",
+    "phoneNumber": "1233456789",
+    "message": "",
+    "totalPrice": 300
+  },
+  {
+    "propertyAddress": "South Devon, England, UK",
+    "checkInDate": "2024-06-19T09:47:27.704Z",
+    "checkOutDate": "2024-06-24T23:00:00.000Z",
+    "numberOfNights": 5,
+    "name": "Geroge",
+    "email": "geroge@sample.com",
+    "phoneNumber": "3145876489",
+    "message": "",
+    "totalPrice": 750
+  },
+  {
+    "propertyAddress": "South Devon, England, UK",
+    "checkInDate": "2024-06-19T17:41:31.117Z",
+    "checkOutDate": "2024-06-23T23:00:00.000Z",
+    "numberOfNights": 4,
+    "name": "David",
+    "email": "david@sample.com",
+    "phoneNumber": "53223987663",
+    "message": "",
+    "totalPrice": 600
+  },
+  {
+    "propertyAddress": "Paris, France",
+    "checkInDate": "2024-06-19T17:42:47.932Z",
+    "checkOutDate": "2024-06-21T23:00:00.000Z",
+    "numberOfNights": 2,
+    "name": "Christine",
+    "email": "chis@sample.com",
+    "phoneNumber": "4689033256",
+    "message": "",
+    "totalPrice": 160
+  }
+]

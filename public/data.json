@@ -1,0 +1,34 @@
+[{
+    "id": "South-Devon",
+    "address": "South Devon, England, UK",
+    "hostedBy": "Hosted By: Mr & Mrs Doe",
+    "guestSize": "Guest Size: 4",
+    "bedroom": " Bedroom: 2",
+    "bed": "Bed: 2",
+    "bathroom": "Bathroom: 1",
+    "price" : "150",
+    "imageLink": [
+        "https://hips.hearstapps.com/hmg-prod/images/calgary-interior-design-14-living-room-concrete-fireplace-65369562aa0f0.jpeg?crop=1xw:1xh;center,top&resize=980:*",
+        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/39/90396388.jpg",
+        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/29/90297909.jpg",
+        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/29/90297900.jpg",
+        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/29/90297902.jpg"
+    ]
+},
+{   
+    "id": "France",
+    "address": "Paris, France",
+    "hostedBy": "Hosted By: Ms Doe",
+    "guestSize": "Guest Size: 2",
+    "bedroom": "Bedroom: 1",
+    "bed": "Bed: 1",
+    "bathroom": "Bathroom: 1",
+    "price" : "80",
+    "imageLink": [
+        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/HP-1.jpg",
+        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/BC-2-2048x1366.jpg",
+        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/Resized-6.jpg",
+        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/HP-2-1.jpg"
+    ]
+}
+]
