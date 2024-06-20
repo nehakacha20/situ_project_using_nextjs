@@ -119,5 +119,16 @@
     "phoneNumber": "473638734859",
     "message": "",
     "totalPrice": 400
+  },
+  {
+    "propertyAddress": "South Devon, England, UK",
+    "checkInDate": "2024-06-20T12:02:45.785Z",
+    "checkOutDate": "2024-06-23T23:00:00.000Z",
+    "numberOfNights": 3,
+    "name": "john doe",
+    "email": "abc@gmail.com",
+    "phoneNumber": "4689033256",
+    "message": "",
+    "totalPrice": 450
   }
 ]
