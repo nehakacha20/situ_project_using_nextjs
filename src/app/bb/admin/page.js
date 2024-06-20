@@ -82,6 +82,10 @@ const AdminPage = () => {
               <Th>Name</Th>
               <Th>Email</Th>
               <Th>Phone Number</Th>
+              <Th>Check IN</Th>
+              <Th>Check OUT</Th>
+              <Th>Price</Th>
+              <Th>Location</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -90,6 +94,10 @@ const AdminPage = () => {
                 <Td>{enquiry.name}</Td>
                 <Td>{enquiry.email}</Td>
                 <Td>{enquiry.phoneNumber}</Td>
+                <Td>{enquiry.checkInDate}</Td>
+                <Td>{enquiry.checkOutDate}</Td>
+                <Td>£{enquiry.totalPrice}</Td>
+                <Td>{enquiry.propertyAddress}</Td>
               </Tr>
             ))}
           </Tbody>

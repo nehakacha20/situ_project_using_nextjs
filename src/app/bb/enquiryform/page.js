@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 import {
   FormControl,
   FormLabel,
-  FormHelperText,
   Input,
   Textarea,
   Box,
   Button,
   VStack,
   Heading,
-  Alert,
-  AlertIcon,
+  HStack,
+  useToast,
 } from "@chakra-ui/react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -27,7 +26,7 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [totalPrice, setTotalPrice] = useState(0);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const toast = useToast();
 
   const calculateNumberOfNights = (checkIn, checkOut) => {
     if (checkIn && checkOut) {
@@ -48,14 +47,26 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
     calculateNumberOfNights(checkInDate, date);
   };
 
-  let totalPriceToStay = (pricePerNight, numberOfNights) => {
-    return pricePerNight * numberOfNights;
+  let totalPriceToStay = (pricePerNight, numberOfNights, minprize) => {
+    if (numberOfNights === 0) {
+      return pricePerNight;
+    }
+    const calculatedPrice = pricePerNight * numberOfNights;
+    return Math.max(calculatedPrice, minprize);
   };
 
   useEffect(() => {
     if (property) {
       let pricePerNight = parseInt(property.price);
-      const total = totalPriceToStay(pricePerNight, numberOfNights);
+      let minprize = 0;
+
+      if (property.name === "Devon") {
+        minprize = 150;
+      } else {
+        minprize = pricePerNight;
+      }
+
+      const total = totalPriceToStay(pricePerNight, numberOfNights, minprize);
       setTotalPrice(total);
     }
   }, [property, numberOfNights]);
@@ -98,10 +109,6 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
         setPhoneNumber("");
         setMessage("");
         setTotalPrice(0);
-
-        setIsSubmitted(true);
-
-        setTimeout(() => setIsSubmitted(false), 2000);
       } else {
         console.log("Failed to store enquiry data", response.statusText);
       }
@@ -117,7 +124,7 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
       </Heading>
 
       <form onSubmit={handleSubmit}>
-        <VStack spacing={4}>
+        <HStack spacing={4}>
           <FormControl isRequired>
             <FormLabel htmlFor="checkInDate">Check-in Date</FormLabel>
             <Box border="1px" borderColor="gray.200" borderRadius="md" p={2}>
@@ -157,10 +164,11 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
                 showTimeSelect={false}
               />
             </Box>
-            <FormHelperText>Please select the check-out date</FormHelperText>
           </FormControl>
-          {numberOfNights > 0 && <div>Number of nights: {numberOfNights}</div>}
+        </HStack>
+        {numberOfNights > 0 && <div>Number of nights: {numberOfNights}</div>}
 
+        <VStack>
           <FormControl isRequired>
             <FormLabel htmlFor="name">Name</FormLabel>
             <Input
@@ -215,22 +223,23 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
               border="1px solid black"
             />
           </FormControl>
-          {isSubmitted && (
-            <Alert
-              status="success"
-              mb={5}
-              variant="subtle"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              textAlign="center"
-              height="100px"
-            >
-              <AlertIcon />
-              Your form has been submitted successfully!
-            </Alert>
-          )}
-          <Button type="submit" colorScheme="green" width="full" color="white">
+
+          <Button
+            type="submit"
+            colorScheme="green"
+            width="full"
+            color="white"
+            onClick={() =>
+              toast({
+                description: "Your form has been submitted successfully!",
+                status: "success",
+                duration: 2000,
+                isClosable: true,
+                position: "bottom",
+                color: "white",
+              })
+            }
+          >
             Submit
           </Button>
         </VStack>

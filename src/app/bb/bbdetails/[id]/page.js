@@ -9,11 +9,12 @@ import {
   Image,
   Stack,
   Flex,
+  Card,
+  CardBody,
 } from "@chakra-ui/react";
 import EnquiryForm from "../../enquiryform/page";
 
 const PropertyDetails = () => {
-
   const { id } = useParams();
   const [property, setProperty] = useState(null);
 
@@ -39,11 +40,11 @@ const PropertyDetails = () => {
   };
 
   return (
-    <Box p={5} bg='green.500'>
+    <Box bg="green.500" spacing={2}>
       <Flex flexDirection={"row"}>
         <Box p={5} maxWidth="40%">
           {property.imageLink && (
-            <SimpleGrid columns={1} spacing={2}>
+            <SimpleGrid columns={1} spacing={2} mt={10}>
               {property.imageLink.map((link, index) => (
                 <Box>
                   <Image
@@ -62,22 +63,31 @@ const PropertyDetails = () => {
             </SimpleGrid>
           )}
         </Box>
-
-        <Box flex="1"  p={50} maxWidth="25%">
-          <Stack spacing={5}>
-            <Text fontSize="xl" fontWeight="bold">
-              Location: {property.address}
-            </Text>
-            <Text fontSize="xl">{property.hostedBy}</Text>
-            <Text fontSize="xl">price: £{property.price} night</Text>
-            <Text fontSize="xl">{property.guestSize}</Text>
-            <Text fontSize="xl">{property.bedroom}</Text>
-            <Text fontSize="xl">{property.bed}</Text>
-            <Text fontSize="xl">{property.bathroom}</Text>
-          </Stack>
+        <Box flex="1" mt={10} maxWidth="25%" spacing={2} p={5}>
+          <Card
+            p={5}
+            backgroundColor="green.400"
+            spacing={2}
+            size="lg"
+            direction="FlexDirection"
+          >
+            <CardBody>
+              <Stack>
+                <Text fontSize="xl" fontWeight="bold">
+                  Location: {property.address}
+                </Text>
+                <Text fontSize="xl">{property.hostedBy}</Text>
+                <Text fontSize="xl">price: £{property.price} night</Text>
+                <Text fontSize="xl">{property.guestSize}</Text>
+                <Text fontSize="xl">{property.bedroom}</Text>
+                <Text fontSize="xl">{property.bed}</Text>
+                <Text fontSize="xl">{property.bathroom}</Text>
+              </Stack>
+            </CardBody>
+          </Card>
         </Box>
 
-        <Box flex='2' flexDirection='column' mt={10}>
+        <Box flex="2" flexDirection="column" mt={10} spacing={2} p={5}>
           <EnquiryForm
             property={property}
             bookedRanges={[]}

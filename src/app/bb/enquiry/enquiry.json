@@ -42,5 +42,82 @@
     "phoneNumber": "4689033256",
     "message": "",
     "totalPrice": 160
+  },
+  {
+    "propertyAddress": "South Devon, England, UK",
+    "checkInDate": "2024-06-19T22:11:43.879Z",
+    "checkOutDate": "2024-06-25T23:00:00.000Z",
+    "numberOfNights": 6,
+    "name": "Mike",
+    "email": "mike@sample.com",
+    "phoneNumber": "874246788754",
+    "message": "",
+    "totalPrice": 900
+  },
+  {
+    "propertyAddress": "South Devon, England, UK",
+    "checkInDate": "2024-06-19T22:30:53.071Z",
+    "checkOutDate": "2024-06-25T23:00:00.000Z",
+    "numberOfNights": 6,
+    "name": "Krish",
+    "email": "krish@sample.com",
+    "phoneNumber": "473638734859",
+    "message": "",
+    "totalPrice": 900
+  },
+  {
+    "propertyAddress": "Paris, France",
+    "checkInDate": "2024-06-19T22:48:04.165Z",
+    "checkOutDate": "2024-06-22T23:00:00.000Z",
+    "numberOfNights": 3,
+    "name": "Mira",
+    "email": "mira@sample.com",
+    "phoneNumber": "345789987655",
+    "message": "",
+    "totalPrice": 240
+  },
+  {
+    "propertyAddress": "Paris, France",
+    "checkInDate": "2024-06-19T22:48:41.521Z",
+    "checkOutDate": "2024-06-22T23:00:00.000Z",
+    "numberOfNights": 3,
+    "name": "Danny",
+    "email": "danny@sample.com",
+    "phoneNumber": "4567876789",
+    "message": "",
+    "totalPrice": 240
+  },
+  {
+    "propertyAddress": "Paris, France",
+    "checkInDate": "2024-06-19T22:55:26.374Z",
+    "checkOutDate": "2024-06-23T23:00:00.000Z",
+    "numberOfNights": 4,
+    "name": "Jen",
+    "email": "jen@sample.com",
+    "phoneNumber": "23456789876",
+    "message": "",
+    "totalPrice": 320
+  },
+  {
+    "propertyAddress": "Paris, France",
+    "checkInDate": "2024-06-19T22:57:26.520Z",
+    "checkOutDate": "2024-06-20T23:00:00.000Z",
+    "numberOfNights": 1,
+    "name": "aa",
+    "email": "abc@gmail.com",
+    "phoneNumber": "4689033256",
+    "message": "",
+    "totalPrice": 80
+  },
+  {
+    "propertyAddress": "Paris, France",
+    "checkInDate": "2024-06-19T22:57:57.911Z",
+    "checkOutDate": "2024-06-24T23:00:00.000Z",
+    "numberOfNights": 5,
+    "name": "aa",
+    "email": "abc@gmail.com",
+    "phoneNumber": "473638734859",
+    "message": "",
+    "totalPrice": 400
   }
 ]
