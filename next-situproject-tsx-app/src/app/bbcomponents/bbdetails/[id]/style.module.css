@@ -1,0 +1,74 @@
+.navbar {
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+ 
+.navMenu {
+    list-style: none;
+    display: flex;
+}
+ 
+.link {
+    color: #fff;
+    text-decoration: none;
+    padding: 13px;
+    font-size: 1.4rem;
+    font-weight:500;
+}
+ 
+/* Changing the color */
+.link:hover {
+    color: black;
+}
+
+/*embala image file*/
+
+.embla {
+    position: relative;
+  }
+  
+  .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    margin-left: 10px;
+  }
+  
+  .embla__slide {
+    position: center;
+    min-width: 100%;
+    padding-left: 10px;
+  }
+  
+  .embla__prev,
+  .embla__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: green;
+    border: none;
+    cursor: pointer;
+    font-size: x-large;
+    padding: 10px;
+    color: white;
+  }
+  
+  .embla__prev {
+    left: 10px;
+  }
+  
+  .embla__next {
+    right: 10px;
+  }
+  

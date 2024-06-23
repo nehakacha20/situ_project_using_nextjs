@@ -1,0 +1,25 @@
+.navbar {
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+ 
+.navMenu {
+    list-style: none;
+    display: flex;
+}
+ 
+.link {
+    color: #fff;
+    text-decoration: none;
+    padding: 13px;
+    font-size: 1.4rem;
+    font-weight:500;
+}
+ 
+/* Changing the color */
+.link:hover {
+    color: black;
+}
