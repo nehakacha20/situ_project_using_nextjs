@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ChakraProvider, background } from "@chakra-ui/react";
+import { ChakraProvider, background, Image, Card, Text } from "@chakra-ui/react";
+import { Main } from "next/document";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,21 +21,38 @@ export default function RootLayout({
       <body className={inter.className}>
       
         <ChakraProvider>
-        <header
-            style={{
-              backgroundColor: "green",
-              padding: "1rem",
-            }}>
-              <p></p>
-          </header>
+         <main>
+          <Card
+        direction={{ base: "column", sm: "row" }}
+        overflow="hidden"
+        variant="outline"
+        backgroundColor="green.500"
+        
+      >
+        <Image
+          src="/photo/logo/Your BNb.png"
+          alt="Beach logo"
+          height="100px"
+          width="100px"
+          display="flex"
+          mr={10}
+        />
+        <Text
+          color="white"
+          fontFamily="cursive"
+          fontSize="xx-large"
+          textAlign="center"
+          justifyContent="center"
+          alignItems="center"
+          display="flex"
+          flexDirection="column"
+        >
+          "Welcome to BnB: Your Home Away From Home" !!
+        </Text>
+      </Card>
+          
           {children}
-          <footer 
-         style={{
-          backgroundColor: "green",
-          padding: "1rem",
-        }}>
-          <p></p>
-        </footer>
+          </main>
         </ChakraProvider>
         
         </body>

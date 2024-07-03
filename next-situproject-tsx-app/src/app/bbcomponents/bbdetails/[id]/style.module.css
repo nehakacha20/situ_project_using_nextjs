@@ -1,9 +1,10 @@
 .navbar {
-    background-color: green;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    background-color: white;
+    display: flex 1;
+    justify-content: space-around;
+    align-items:center;
+    padding: 18px;
+    
 }
  
 .navMenu {
@@ -12,10 +13,10 @@
 }
  
 .link {
-    color: #fff;
+    color: green;
     text-decoration: none;
     padding: 13px;
-    font-size: 1.4rem;
+    font-size: xx-large;
     font-weight:500;
 }
  
@@ -24,51 +25,148 @@
     color: black;
 }
 
-/*embala image file*/
+/*carousel image file*/
 
-.embla {
-    position: relative;
-  }
-  
-  .embla__viewport {
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .embla__container {
-    display: flex;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    margin-left: 10px;
-  }
-  
-  .embla__slide {
-    position: center;
-    min-width: 100%;
-    padding-left: 10px;
-  }
-  
-  .embla__prev,
-  .embla__next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: green;
-    border: none;
-    cursor: pointer;
-    font-size: x-large;
-    padding: 10px;
-    color: white;
-  }
-  
-  .embla__prev {
-    left: 10px;
-  }
-  
-  .embla__next {
-    right: 10px;
-  }
-  
+/* .corousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+}
+
+.arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  filter: drop-shadow(black);
+
+}
+
+.indicators {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.indicator {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: green;
+  margin: 0 0.2rem;
+
+}
+
+.indicator-inactive {
+  background-color: green;
+}
+.arrow-left {
+  left: 1rem;
+}
+
+.arrow-right {
+  left: 1rem;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+.slide {
+  border-radius: 0.5rem;
+  box-shadow: green;
+  width: 100%;
+  height: 100%;
+}
+
+.indicator-inactive {
+  background-color: green;
+} */
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  height: 500px; /* Set your desired height here */
+  width: auto; /* This will maintain the aspect ratio */
+  transition: opacity 0.5s ease-in-out;
+  margin: 0 auto;
+  display: block;
+}
+
+.slideHidden {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  color: green;
+  filter: drop-shadow(white);
+}
+
+.arrowLeft {
+  left: 1rem;
+}
+
+.arrowRight {
+  right: 1rem;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.indicator {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicatorActive {
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reviewBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2;
+  padding: 5;
+  border-width: 1px;
+  border-radius: md;
+}

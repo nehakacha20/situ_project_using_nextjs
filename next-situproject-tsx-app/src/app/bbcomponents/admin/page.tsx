@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import PropertyList from "../page";
 import Link from "next/link";
 import styles from "./style.module.css";
@@ -23,7 +24,6 @@ const AdminPage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [adminLink, setAdminLink] = useState();
 
   useEffect(() => {
     const fetchEnquiries = async () => {
@@ -31,6 +31,7 @@ const AdminPage = () => {
         const response = await fetch("/api/getenquirydata");
         if (response.ok) {
           const data = await response.json();
+          console.log("Fetched enquiries:", data); // Log fetched data for debugging
           setEnquiries(data);
           setSearchResults(data);
         } else {
@@ -51,6 +52,7 @@ const AdminPage = () => {
         enquiry.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         enquiry.phoneNumber.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    console.log("Filtered results:", filteredResults); // Log filtered results for debugging
     setSearchResults(filteredResults);
     setIsSubmitted(true);
     setSearchTerm("");

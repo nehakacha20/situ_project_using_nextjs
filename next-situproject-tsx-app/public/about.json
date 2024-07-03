@@ -1,0 +1,26 @@
+{
+      "title": "BnB About page",
+      "subtitle": "Your Cozy Retreat in South Devon and Paris",
+      "introduction": "At BnB, we believe in creating a home away from home for our guests. Nestled in two stunning locations—South Devon and Paris—our modern yet cozy accommodations offer the perfect blend of comfort and style, making your stay unforgettable.",
+      "locations": {
+        "SouthDevon": {
+          "description": "Situated in the heart of South Devon, our charming two-bedroom property provides a serene escape in the English countryside. The spacious garden is perfect for leisurely afternoons, where you can relax with a good book or enjoy a picnic under the open sky. The rooms are designed to offer maximum comfort with a modern touch, ensuring you feel right at home."
+        },
+        "Paris": {
+          "description": "Our Parisian getaway is located in a picturesque neighborhood, ideal for those looking to explore the romantic city of lights. This one-bedroom apartment is a sanctuary amidst the bustling city, offering a tranquil garden where you can unwind after a day of sightseeing. The contemporary decor combined with cozy elements creates a warm and inviting atmosphere."
+        }
+      },
+      "petFriendly": "We understand that pets are part of the family, which is why both of our properties welcome your furry friends. Enjoy your vacation without worrying about leaving your pets behind.",
+      "nearbyAttractions": {
+        "SouthDevon": {
+          "description": "Discover the natural beauty of South Devon with its stunning beaches, rolling hills, and quaint villages. Explore the South West Coast Path, visit the charming town of Dartmouth, or take a boat trip along the River Dart. For those who enjoy outdoor activities, there are plenty of opportunities for hiking, cycling, and water sports."
+        },
+        "Paris": {
+          "description": "Immerse yourself in the rich culture and history of Paris. Our property is conveniently located near iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Enjoy a leisurely stroll along the Seine, dine at world-class restaurants, or shop at chic boutiques. Paris offers endless possibilities for exploration and adventure."
+        }
+      },
+      "ourStory": "BnB was born out of a passion for hospitality and a desire to create a welcoming space for travelers. Whether you’re visiting South Devon or Paris, we aim to provide a unique and memorable experience. Our properties are carefully curated to reflect the charm and character of their surroundings, offering you a comfortable and stylish retreat.",
+      "invitation": "We invite you to stay at BnB and experience the best of South Devon and Paris. Whether you're seeking a peaceful countryside escape or an urban adventure, our accommodations are designed to cater to your every need. Book your stay with us and create lasting memories."
+    }
+  
+  

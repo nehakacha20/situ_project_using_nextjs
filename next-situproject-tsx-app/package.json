@@ -1,29 +1,60 @@
 {
-  "name": "next-situproject-tsx-app",
-  "version": "0.1.0",
   "private": true,
+  "name": "next-situproject-tsx-app",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "jest"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "date-fns": "^3.6.0",
     "embla-carousel": "^8.1.5",
     "embla-carousel-react": "^8.1.5",
+    "libphonenumber-js": "^1.11.4",
     "next": "14.2.4",
     "react": "^18",
+    "react-datepicker": "^7.2.0",
     "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-international-phone": "^4.3.0",
     "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.0",
+    "@storybook/addon-essentials": "^8.1.11",
+    "@storybook/addon-interactions": "^8.1.11",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/addon-onboarding": "^8.1.11",
+    "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
+    "@storybook/blocks": "^8.1.11",
+    "@storybook/nextjs": "^8.1.11",
+    "@storybook/react": "^8.1.11",
+    "@storybook/test": "^8.1.11",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "eslint-plugin-storybook": "^0.8.0",
+    "identity-obj-proxy": "^3.0.0",
     "postcss": "^8",
+    "storybook": "^8.1.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^next/router$": "<rootDir>/__mocks__/next/router.js"
+    }
   }
 }

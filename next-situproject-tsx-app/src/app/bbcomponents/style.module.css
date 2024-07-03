@@ -1,5 +1,5 @@
 .navbar {
-    background-color: green;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,11 +12,13 @@
 }
  
 .link {
-    color: #fff;
+    color: green;
     text-decoration: none;
     padding: 13px;
     font-size: 1.4rem;
-    font-weight:500;
+    font-weight: bold;
+    font-family: popin sans-serif;
+
 }
  
 /* Changing the color */

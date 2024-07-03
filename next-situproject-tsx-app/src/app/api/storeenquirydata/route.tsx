@@ -37,31 +37,3 @@ export async function POST(req: string) {
     );
   }
 }
-
-export async function GET(req: string) {
-  try {
-    if (
-      await fs
-        .stat(filePath)
-        .then(() => true)
-        .catch(() => false)
-    ) {
-      const fileData = await fs.readFile(filePath, "utf8");
-      const data = JSON.parse(fileData);
-      return new Response(JSON.stringify(data), { status: 200 });
-    } else {
-      return new Response(JSON.stringify({ message: "No enquiries found" }), {
-        status: 404,
-      });
-    }
-  } catch (error) {
-    console.error("Error in GET enquiry data:", error);
-    return new Response(
-      JSON.stringify({
-        message: "Error reading enquiry data",
-        error: error.message,
-      }),
-      { status: 500 }
-    );
-  }
-}

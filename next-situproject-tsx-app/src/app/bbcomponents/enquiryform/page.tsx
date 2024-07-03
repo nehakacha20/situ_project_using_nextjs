@@ -1,6 +1,10 @@
-"use client";
-
 import { useState, useEffect } from "react";
+import {
+  PhoneInput,
+  defaultCountries,
+  parseCountry,
+} from 'react-international-phone';
+import 'react-international-phone/style.css';
 import {
   FormControl,
   FormLabel,
@@ -15,10 +19,10 @@ import {
 } from "@chakra-ui/react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { differenceInDays, addYears } from "date-fns";
+import { differenceInDays, addYears, parseISO, format } from "date-fns";
 
 const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
-  const [checkInDate, setCheckInDate] = useState(new Date());
+  const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [numberOfNights, setNumberOfNights] = useState(0);
   const [name, setName] = useState("");
@@ -28,26 +32,30 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const toast = useToast();
 
-  const calculateNumberOfNights = (checkIn, checkOut) => {
+  const calculateNumberOfNights = (checkIn:number, checkOut:number) => {
     if (checkIn && checkOut) {
       const nights = differenceInDays(checkOut, checkIn);
       setNumberOfNights(nights);
+    } else {
+      setNumberOfNights(0); // Reset number of nights if check-in or check-out is not selected
     }
   };
 
   const handleCheckInChange = (date) => {
     setCheckInDate(date);
-    if (checkOutDate) {
+    if (date && checkOutDate) {
       calculateNumberOfNights(date, checkOutDate);
     }
   };
 
   const handleCheckOutChange = (date) => {
     setCheckOutDate(date);
-    calculateNumberOfNights(checkInDate, date);
+    if (checkInDate && date) {
+      calculateNumberOfNights(checkInDate, date);
+    }
   };
 
-  let totalPriceToStay = (pricePerNight, numberOfNights, minprize) => {
+  let totalPriceToStay = (pricePerNight: , numberOfNights, minprize) => {
     if (numberOfNights === 0) {
       return pricePerNight;
     }
@@ -74,10 +82,23 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Validate required fields
+    if (!checkInDate || !checkOutDate || !name || !email || !phoneNumber) {
+      toast({
+        title: "Missing Fields",
+        description: "Please fill in all required fields (Check-in, Check-out, Name, Email, Phone Number).",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "bottom",
+      });
+      return; // Exit early if any required field is missing
+    }
+
     const formData = {
       propertyAddress: property.address,
-      checkInDate,
-      checkOutDate,
+      checkInDate: format(checkInDate, 'yyyy-MM-dd'),
+      checkOutDate: format(checkOutDate, 'yyyy-MM-dd'),
       numberOfNights,
       name,
       email,
@@ -101,7 +122,8 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
 
         onFormSubmit(formData);
 
-        setCheckInDate(new Date());
+        // Reset form fields after successful submission
+        setCheckInDate(null);
         setCheckOutDate(null);
         setNumberOfNights(0);
         setName("");
@@ -109,6 +131,14 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
         setPhoneNumber("");
         setMessage("");
         setTotalPrice(0);
+
+        toast({
+          description: "Your form has been submitted successfully!",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+          position: "bottom",
+        });
       } else {
         console.log("Failed to store enquiry data", response.statusText);
       }
@@ -117,10 +147,15 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
     }
   };
 
+  const countries = defaultCountries.filter((country) => {
+    const { iso2 } = parseCountry(country);
+    return ['gb'].includes(iso2);
+  });
+
   return (
-    <Box p={5} bg="white" borderRadius="md" boxShadow="md">
+    <Box p={5} bg="white" borderRadius="md" boxShadow="md" textAlign="center" fontSize="larger">
       <Heading as="h2" size="md" mb={5}>
-        Enquiry Form for {property.address}
+        {property.address}
       </Heading>
 
       <form onSubmit={handleSubmit}>
@@ -193,13 +228,15 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
           </FormControl>
           <FormControl isRequired>
             <FormLabel htmlFor="phoneNumber">Phone Number</FormLabel>
-            <Input
-              id="phoneNumber"
-              type="string"
+            <PhoneInput
+              defaultCountry="gb"
               value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="Your phone number"
-              border="1px solid black"
+              onChange={setPhoneNumber}
+              placeholder="Enter your phone number"
+              errorMessage="Invalid phone number"
+              inputProps={{
+                required: true,
+              }}
             />
           </FormControl>
           <FormControl>
@@ -229,16 +266,6 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
             colorScheme="green"
             width="full"
             color="white"
-            onClick={() =>
-              toast({
-                description: "Your form has been submitted successfully!",
-                status: "success",
-                duration: 2000,
-                isClosable: true,
-                position: "bottom",
-                color: "white",
-              })
-            }
           >
             Submit
           </Button>

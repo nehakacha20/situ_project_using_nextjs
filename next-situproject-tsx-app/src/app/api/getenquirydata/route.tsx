@@ -1,8 +1,9 @@
 import { promises as fs } from "fs";
 import path from "path";
 
+const filePath = path.join(process.cwd(), "src/app/bbcomponents/enquiry/enquiry.json");
+
 export async function GET(req: string, res: string) {
-  const filePath = path.join(process.cwd(), "src/app/bbcomponents/enquiry/enquiry.json");
   try {
     const fileData = await fs.readFile(filePath, "utf8");
     const enquiry = JSON.parse(fileData);

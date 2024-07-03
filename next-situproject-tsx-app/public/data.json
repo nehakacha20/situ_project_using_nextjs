@@ -1,34 +1,203 @@
 [{
     "id": "South-Devon",
-    "address": "South Devon, England, UK",
-    "hostedBy": "Hosted By: Mr & Mrs Doe",
+    "address": "Exeter, England, UK",
+    "type": "Modern City Apartment", 
+    "rating": "4/5",
+    "review": 9,
+    "customerSatisfaction": "Very Good",
+    "hostedBy": "Mr & Mrs Doe",
     "guestSize": 4,
     "bedroom": 2,
     "bed": 2,
     "bathroom": 1,
     "price" : 150,
-    "imageLink": [
-        "https://hips.hearstapps.com/hmg-prod/images/calgary-interior-design-14-living-room-concrete-fireplace-65369562aa0f0.jpeg?crop=1xw:1xh;center,top&resize=980:*",
-        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/39/90396388.jpg",
-        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/29/90297909.jpg",
-        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/29/90297900.jpg",
-        "https://photos2.spareroom.co.uk/images/flatshare/listings/large/90/29/90297902.jpg"
+    "checkIn": "Self Check in",
+    "cancelation": "Free cancellation for 48 hours.",
+    "description": "This cute three bedroom property offers idyllic accommodation in the Alphington area of Exeter. It includes a beautiful kitchen/diner with a wooden dining table and a lounge with plenty of comfortable seating that opens out onto a magical little garden. Car parking on-site, A flat screen TV helps provide entertainment and there is Wi-Fi access.",
+    "details": "The Apple Wagon ~ Stunning 2 bed apartment, in the heart of Exeter!",
+    "overview": "This renovated two bedroom property can accommodate up to 5 guests in the centre of Exeter.  Alphington accommodation is situated within an old cottage-style property that provides an overall quirky feel for guests during their stay. That said, it has all the facilities to ensure maximum convenience, including a fully equipped kitchen, laundry facilities, TV and Wi-Fi. Parking is also available on-site.",
+    "information": "Experience the warmth and comfort of home, no matter where your travels take you. Welcome to BNB. From the moment you step through our doors, you'll be embraced by a cozy ambiance and a friendly atmosphere that instantly makes you feel at ease. Our carefully curated spaces, plush bedding, and thoughtful amenities are designed to provide you with the ultimate relaxation and convenience. Whether you're here for a weekend getaway, a business trip, or an extended stay, BNB ensures that every moment of your visit is filled with comfort and tranquility. Enjoy the local charm and unique touches that make each of our locations special, all while feeling right at home. Let us be your sanctuary on the road, where you can unwind, recharge, and create lasting memories.",
+    "ratings": [{
+        "name": "Charlotte",
+        "avatar": "/photo/review-image/girl1.jpg",
+        "rating": "5/5",
+        "date": "May 2024",
+        "review": "My family and I had a lovely few days in Exeter. Communication with Mr Doe was great leading up to and throughout the visit."
+      },
+      {
+        "name": "John",
+        "avatar": "/photo/review-image/men1.jpg",
+        "rating": "4.5/5",
+        "date": "December 2023",
+        "review": "Mrs Doe was a very responsive host and was so organised we didn’t need to contact her over anything! It was a very homely environment, everything we needed was there."
+      },
+      {
+        "name": "Chris",
+        "avatar": "/photo/review-image/men2.jpg",
+        "rating": "5/5",
+        "date": "february 2024",
+        "review": "Amazing place, loved the views and the beds where so comfy!"
+      },
+      {
+        "name": "Donna",
+        "avatar": "/photo/review-image/girl2.jpg",
+        "rating": "5/5",
+        "date": "march 2023",
+        "review": "Excellent administration for the whole holiday. The location was outstanding and the house had everything we required. We will definitely visit again.."
+      },
+      {
+        "name": "Jack",
+        "avatar": "/photo/review-image/men3.jpg",
+        "rating": "5/5",
+        "date": "august 2023",
+        "review": "Beautiful location and excellent communication from Mr and Mrs Doe."
+      },
+      {
+        "name": "Rebeca",
+        "avtar": "/photo/review-image/girl3.jpg",
+        "rating": "4/5",
+        "date": "november 2023",
+        "review": "Nice place to stay. Very helpful at short notice. Would book again!."
+      },
+      {
+        "name": "Adam",
+        "avatar": "/photo/review-image/men4.jpg",
+        "rating": "4.5/5",
+        "date": "june 2024",
+        "review": "Very quiet and relaxing stay. Felt like I was away from the hustle and bustle but still very close to the city centre. Mr Doe was really helpful and had a great time."
+      },
+      {
+        "name": "Mike",
+        "avatar": "/photo/review-image/men5.jpg",
+        "rating": "4.5/5",
+        "date": "july 2023",
+        "review": "Lovely clean, spacious apartment with a great host. Thank you Mr and Mrs Doe."
+      },
+      {
+        "name": "David",
+        "avatar": "/photo/review-image/men6.jpg",
+        "rating": "5/5",
+        "date": "september 2023",
+        "review": "Great value for an apartment that was in a great location for our stay."
+      }],
+    "imageLink": [  
+        "/photo/image/devon1.jpg", 
+        "/photo/image/devon.jpg",    
+        "/photo/image/southdevonimage4.jpg",
+        "/photo/image/southdevonimage3.jpg",         
+        "/photo/image/southdevonimage5.jpg"
     ]
 },
 {   
     "id": "France",
     "address": "Paris, France",
-    "hostedBy": "Hosted By: Ms Doe",
+    "type": "Modern Holiday Apartment",
+    "rating": "4.5/5",
+    "review": 12,
+    "customerSatisfaction": "Excelent",
+    "hostedBy": "Ms Doe",
     "guestSize": 2,
     "bedroom": 1,
     "bed": 1,
     "bathroom": 1,
     "price" : 80,
+    "checkIn": "Self Check in",
+    "cancelation": "Free cancellation for 48 hours.",
+    "overview": "This beautifully furnished apartment with rustic touches is an ideal base in the centre of Paris. The living area benefits from tall, light-giving windows and has a large wardrobe for good storage. The kitchen has a couple of breakfast bar seats and there is a good-sized bathroom with a modern shower and laundry facilities. Serviced Apartment can sleep two and comes with the benefit of on-site parking.",
+    "description": "One bedroom apartment is available at the près du Musée du Louvre et du Jardin des Tuileries in Paris. The spaces mix up with thoroughly modern facilities. Apartments include dedicated workspace, Come with a kitchenette and a dishwasher and are air-conditioned for comfort. Apartment has a well-presented bathroom and the convenience of weekly housekeeping.",
+    "details": "Élégant Appartement près du Musée du Louvre et du Jardin des Tuileries. ",
+    "information": "Experience the warmth and comfort of home, no matter where your travels take you. Welcome to BNB. From the moment you step through our doors, you'll be embraced by a cozy ambiance and a friendly atmosphere that instantly makes you feel at ease. Our carefully curated spaces, plush bedding, and thoughtful amenities are designed to provide you with the ultimate relaxation and convenience. Whether you're here for a weekend getaway, a business trip, or an extended stay, BNB ensures that every moment of your visit is filled with comfort and tranquility. Enjoy the local charm and unique touches that make each of our locations special, all while feeling right at home. Let us be your sanctuary on the road, where you can unwind, recharge, and create lasting memories.",
+    "ratings": [{
+        "name": "JW",
+        "avatar": "/photo/review-image/men7.jpg",
+        "rating": "5/5",
+        "date": "May 2024",
+        "review": "This place was such a great find! Walking distance from multiple metro stations and lots to do nearby. Super convenient. Had everything we needed and was the perfect space. Loved the flexible check in and check out. We had a very comfortable stay and felt very safe in this area. Would definitely return!."
+      },
+      {
+        "name": "Magali",
+        "avatar": "/photo/review-image/girl4.jpg",
+        "rating": "4.5/5",
+        "date": "December 2023",
+        "review": "Not surprisingly matches the quiet photos in a very lively neighborhood."
+      },
+      {
+        "name": "Chris",
+        "avatar": "/photo/review-image/men8.jpg",
+        "rating": "5/5",
+        "date": "february 2024",
+        "review": "Amazing place, loved the views and the beds where so comfy!"
+      },
+      {
+        "name": "Donna",
+        "avatar": "/photo/review-image/girl5.jpg",
+        "rating": "5/5",
+        "date": "march 2023",
+        "review": "Excellent administration for the whole holiday. The location was outstanding and the house had everything we required. We will definitely visit again.."
+      },
+      {
+        "name": "Arthur",
+        "avatar": "/photo/review-image/men9.jpg",
+        "rating": "5/5",
+        "date": "august 2023",
+        "review": "Great apartment. Very well appointed. Very close to the Metro and both Gare Nord and Gare L’est. Nice restaurants and pastry shops nearby."
+      },
+      {
+        "name": "Maria",
+        "avatar": "/photo/review-image/girl6.jpg",
+        "rating": "5/5",
+        "date": "november 2023",
+        "review": "the apartment was lovely and quiet, in a neighborhood that felt very safe, even at night - right near a metro stop, easy check-in instructions, and lots to do."
+      },
+      {
+        "name": "Lexi",
+        "avatar": "/photo/review-image/men10.jpg",
+        "rating": "4.5/5",
+        "date": "june 2024",
+        "review": "Very good location, very lively street with many restaurants."
+      },
+      {
+        "name": "Nikita",
+        "avatar": "/photo/review-image/girl7.jpg",
+        "rating": "4.5/5",
+        "date": "july 2023",
+        "review": "Lovely clean, spacious apartment with a great host. Thank you Ms Doe."
+      },
+      {
+        "name": "Nurliyana",
+        "avatar": "/photo/review-image/girl8.jpg",
+        "rating": "5/5",
+        "date": "september 2023",
+        "review": "Great location and spacious enough for two people to live comfortably"
+      },
+      {
+        "name": "Audrey",
+        "avatar": "/photo/review-image/men11.jpg",
+        "rating": "5/5",
+        "date": "september 2023",
+        "review": "Thanks for everything Ms Doe!"
+      },
+      {
+        "name": "Gili",
+        "avatar": "/photo/review-image/men12.jpg",
+        "rating": "5/5",
+        "date": "september 2023",
+        "review": "Very cosy and nice little appartement, with a special attention to details . I enjoyed spending a week there , has all the facilities around.I will come back!"
+      },
+      {
+        "name": "François",
+        "avatar": "/photo/review-image/men13.jpg",
+        "rating": "5/5",
+        "date": "september 2023",
+        "review": "Exceptional apartment, exceptional location, exceptional cleanliness in an exceptional city with exceptional Parisians! We can't wait to go back!"
+      }],
     "imageLink": [
-        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/HP-1.jpg",
-        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/BC-2-2048x1366.jpg",
-        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/Resized-6.jpg",
-        "https://www.countryandtownhouse.com/wp-content/uploads/2020/10/HP-2-1.jpg"
+        "/photo/image/franceimage3.jpg",
+        "/photo/image/franceimage1.jpg",
+        "/photo/image/franceimage2.jpg",
+        
+        "/photo/image/franceimage4.jpg"
     ]
 }
 ]
+

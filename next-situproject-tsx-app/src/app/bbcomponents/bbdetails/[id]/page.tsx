@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { useParams } from "next/navigation";
 import styles from "./style.module.css";
 import {
@@ -14,12 +14,39 @@ import {
   Flex,
   Card,
   CardBody,
+  UnorderedList,
+  ListItem,
+  HStack,
+  Avatar
 } from "@chakra-ui/react";
 import EnquiryForm from "../../enquiryform/page";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBathtub,
+  faBed,
+  faBedPulse,
+  faBroom,
+  faBucket,
+  faCalendar,
+  faCalendarCheck,
+  faDoorClosed,
+  faHome,
+  faKitchenSet,
+  faMale,
+  faParking,
+  faSliders,
+  faTowerCell,
+  faTrowel,
+  faTrowelBricks,
+  faWalkieTalkie,
+  faWarehouse,
+  faWifi,
+} from "@fortawesome/free-solid-svg-icons";
 
 const PropertyDetails = () => {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
+  const [slide, setSlide] = useState(0);
 
   useEffect(() => {
     async function fetchPropertyData() {
@@ -35,23 +62,21 @@ const PropertyDetails = () => {
     fetchPropertyData();
   }, [id]);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel();
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
   const handleFormSubmit = (formData) => {
     console.log("Form Data:", formData);
   };
 
   if (!property) {
-    return <Text>Property not found</Text>;
+    return <Text>Connecting to server</Text>;
   }
+
+  const nextSlide = () => {
+    setSlide(slide === property.imageLink.length - 1 ? 0 : slide + 1);
+  };
+
+  const prevSlide = () => {
+    setSlide(slide === 0 ? property.imageLink.length - 1 : slide - 1);
+  };
 
   return (
     <>
@@ -64,66 +89,165 @@ const PropertyDetails = () => {
           </li>
         </ul>
       </nav>
-      <SimpleGrid>
-        <Box bg="green.500" spacing={2}>
-          <Box>
-            <div className={styles.embla}>
-              <div className={styles.embla__viewport} ref={emblaRef}>
-                <div className={styles.embla__container}>
-                  {property.imageLink &&
-                    property.imageLink.map((link, index) => (
-                      <div className={styles.embla__slide} key={index}>
-                        <Image
-                          src={link}
-                          alt={`Property ${property.id} Image ${index + 1}`}
-                          borderRadius="md"
-                          boxShadow="md"
-                          width="100%"
-                          height="700"
-                          backgroundColor="green"
-                          mb={2}
-                          objectFit="cover"
-                        />
-                      </div>
-                    ))}
-                </div>
-              </div>
-              <button className={styles.embla__prev} onClick={scrollPrev}>
-                Prev
-              </button>
-              <button className={styles.embla__next} onClick={scrollNext}>
-                Next
-              </button>
+
+      <Box p={5}>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          justifyContent="space-evenly"
+        >
+          <Box display="flex" flex="70%" mr={{ md: 10 }}>
+            <div className={styles.carousel}>
+              <BsArrowLeftCircleFill
+                className={`${styles.arrow} ${styles.arrowLeft}`}
+                onClick={prevSlide}
+              />
+              {property.imageLink.map((link, index) => (
+                <Image
+                  src={link}
+                  alt={`Slide ${index}`}
+                  key={index}
+                  display={slide === index ? "block" : "none"}
+                  className={
+                    slide === index
+                      ? styles.slide
+                      : `${styles.slide} ${styles.slideHidden}`
+                  }
+                  width="100%"
+                  height="auto"
+                />
+              ))}
+              <BsArrowRightCircleFill
+                className={`${styles.arrow} ${styles.arrowRight}`}
+                onClick={nextSlide}
+              />
+              <span className={styles.indicators}>
+                {property.imageLink.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSlide(index)}
+                    className={
+                      slide === index
+                        ? styles.indicatorActive
+                        : styles.indicator
+                    }
+                  ></button>
+                ))}
+              </span>
             </div>
           </Box>
-          <Flex flexDirection={"row"}>
-            <Box flex="1" mt={10} maxWidth="45%" spacing={2} p={5}>
-              <Card backgroundColor="green.400" size="lg">
-                <CardBody>
-                  <Stack>
-                    <Text fontSize="xl" fontWeight="bold">
-                      Location: {property.address}
-                    </Text>
-                    <Text fontSize="xl">{property.hostedBy}</Text>
-                    <Text fontSize="xl">Price: £{property.price} night</Text>
-                    <Text fontSize="xl">Guest Size:{property.guestSize}</Text>
-                    <Text fontSize="xl">Bedroom:{property.bedroom}</Text>
-                    <Text fontSize="xl">Bed:{property.bed}</Text>
-                    <Text fontSize="xl">Bathroom:{property.bathroom}</Text>
+
+          <Box flex="30%">
+            <EnquiryForm
+              property={property}
+              bookedRanges={[]}
+              onFormSubmit={handleFormSubmit}
+            />
+          </Box>
+        </Flex>
+        <Box m={5}>
+          <Flex direction={{ base: "column", md: "row" }} justifyContent="space-evenly">
+            <Box display="flex" flex="70%" mr={{ md: 10 }}>
+              <Card m={5}>
+                <Text
+
+                  color="black"
+                  fontSize="large"
+                  textAlign="center"
+                  justifyContent="center"
+                  alignItems="center"
+                  display="flex"
+                  p={5}
+                  fontFamily="Poppins, sans-serif"
+                >
+                  Overview <br />
+                  {property.overview}
+                </Text>
+              </Card>
+            </Box>
+            <Box display="flex" flex="30%" mr={{ md: 10 }}>
+              <Card size="lg">
+                <CardBody fontSize="xx-large" fontFamily="Poppins, sans-serif" color="black">
+                  <Stack spacing={4}>
+                    <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
+                      <FontAwesomeIcon icon={faDoorClosed} />
+                      <Text fontSize="medium">
+                        {property.checkIn}!!<br /> Check yourself in with the lockbox.
+                      </Text>
+                    </Box>
+                    <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
+                      <FontAwesomeIcon icon={faMale} />
+                      <Text fontSize="medium">
+                        {property.hostedBy} is a super host. <br /> Superhosts are experienced, highly rated Hosts.
+                      </Text>
+                    </Box>
+                    <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
+                      <FontAwesomeIcon icon={faCalendarCheck} />
+                      <Text fontSize="medium">
+                        {property.cancelation} <br /> Get a full refund if you change your mind.
+                      </Text>
+                    </Box>
                   </Stack>
                 </CardBody>
               </Card>
             </Box>
-            <Box flex="2" mt={10} spacing={2} p={5}>
-              <EnquiryForm
-                property={property}
-                bookedRanges={[]}
-                onFormSubmit={handleFormSubmit}
-              />
-            </Box>
+
+          </Flex>
+
+          <Text fontSize="x-large" m={8}>What this place offers</Text>
+          <Flex>
+            <SimpleGrid columns={[2, 4]} spacing="40px" m={5}>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faHome} size="lg" />
+                <Text fontSize="large">Entire home</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faBed} size="lg" />
+                <Text fontSize="large">{property.bedroom} bedroom</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faBathtub} size="lg" />
+                <Text fontSize="large">{property.bathroom} bathroom</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faWifi} size="lg" />
+                <Text fontSize="large">Wi-Fi</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faKitchenSet} size="lg" />
+                <Text fontSize="large">Fully Equipped Kitchen</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faParking} size="lg" />
+                <Text fontSize="large">On-Site</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faTrowelBricks} size="lg" />
+                <Text fontSize="large">Linen And Towels</Text>
+              </Box>
+              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
+                <FontAwesomeIcon icon={faBucket} size="lg" />
+                <Text fontSize="large">Cleaning</Text>
+              </Box>
+            </SimpleGrid>
           </Flex>
         </Box>
-      </SimpleGrid>
+        <Text fontSize="x-large" m={5}> <strong>{property.rating}</strong> Total <strong>{property.review}</strong> Reviews!! </Text>
+        <Flex direction="column" align="center" >
+          <SimpleGrid columns={[1, null, 2]} spacing="40px" m={5}>
+            {property.ratings.map((rating, index) => (
+              <Box key={index} className={styles.reviewBox}>
+                <Flex alignItems="center" gap={4}>
+                  <Avatar name={rating.name} src={rating.avatar} />
+                  <Text fontWeight="bold">{rating.name}</Text>
+                </Flex>
+                <Text>Rating: {rating.rating} stars</Text>
+                <Text>{rating.date}</Text>
+                <Text>{rating.review}</Text>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Flex>
+      </Box>
     </>
   );
 };
