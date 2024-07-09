@@ -15,14 +15,14 @@ const About = () => {
                 setAboutData(data);
             } catch (error) {
                 console.error("Error fetching about data:", error);
-                // Optionally handle error state or retry logic here
+               
             }
         }
         fetchAboutData();
     }, []);
 
     if (!aboutData) {
-        return <Box>Loading...</Box>; // Handle loading state
+        return <Box>Loading...</Box>; 
     }
 
     return (

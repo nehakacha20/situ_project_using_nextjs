@@ -4,8 +4,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Box } from "@chakra-ui/react";
 import PropertyList from "./bbcomponents/page";
-import AdminPage from "./bbcomponents/admin/page";
-import About from "./bbcomponents/about/page";
 
 export default function Home() {
   const [propertyInformation, setPropertyInformation] = useState([]);

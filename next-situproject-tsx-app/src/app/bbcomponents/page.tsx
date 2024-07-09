@@ -118,7 +118,7 @@ function PropertyList({ properties = [] }) {
             fontFamily="Poppins, sans-serif"
 
             mb={5}
-            mt={5} // Add margin bottom for spacing between cards
+            mt={5} 
             _hover={{
               backgroundColor: "green.500",
               color: "white",
@@ -137,9 +137,7 @@ function PropertyList({ properties = [] }) {
             <Stack>
               <CardBody >
                 <Heading size="md" mb={5} fontSize="x-large">{info.type}</Heading>
-                {/* <Text py="2" lineHeight="1em">
-                  {info.address}
-                </Text> */}
+               
                 <Text py="2" lineHeight="1em" fontSize="small">
                   From £{info.price} per night
                 </Text>

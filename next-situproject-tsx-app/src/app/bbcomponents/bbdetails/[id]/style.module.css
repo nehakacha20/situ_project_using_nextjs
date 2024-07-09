@@ -25,70 +25,6 @@
     color: black;
 }
 
-/*carousel image file*/
-
-/* .corousel {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  height: 400px;
-}
-
-.arrow {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  color: white;
-  filter: drop-shadow(black);
-
-}
-
-.indicators {
-  display: flex;
-  position: absolute;
-  bottom: 1rem;
-}
-
-.indicator {
-  background-color: white;
-  height: 100%;
-  width: 100%;
-  border-radius: 100%;
-  border: none;
-  outline: none;
-  box-shadow: green;
-  margin: 0 0.2rem;
-
-}
-
-.indicator-inactive {
-  background-color: green;
-}
-.arrow-left {
-  left: 1rem;
-}
-
-.arrow-right {
-  left: 1rem;
-}
-
-.arrow:hover {
-  cursor: pointer;
-}
-.slide {
-  border-radius: 0.5rem;
-  box-shadow: green;
-  width: 100%;
-  height: 100%;
-}
-
-.indicator-inactive {
-  background-color: green;
-} */
-
-
 .carousel {
   position: relative;
   width: 100%;
@@ -99,8 +35,8 @@
 }
 
 .slide {
-  height: 500px; /* Set your desired height here */
-  width: auto; /* This will maintain the aspect ratio */
+  height: 500px;
+  width: auto; 
   transition: opacity 0.5s ease-in-out;
   margin: 0 auto;
   display: block;

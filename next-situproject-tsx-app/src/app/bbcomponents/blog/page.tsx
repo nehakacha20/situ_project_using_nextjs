@@ -3,7 +3,7 @@
 import { Box, Heading, Text, Link, Card, Image, Center } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import styles from "./style.module.css";
-import { Content } from "next/font/google";
+
 
 const Blog = () => {
     const [blogData, setBlogData] = useState(null);
@@ -16,7 +16,7 @@ const Blog = () => {
                 setBlogData(data);
             } catch (error) {
                 console.error("Error fetching about data:", error);
-                // Optionally handle error state or retry logic here
+               
             }
         }
         fetchAboutData();
@@ -85,13 +85,6 @@ const Blog = () => {
 
                         <Heading size="lg" mb={4}>{blogData.sections[7].heading}</Heading>
                         <Text mb={4}>{blogData.sections[7].content}</Text>
-
-
-
-
-
-
-
 
                     </Box>
                 </Center>

@@ -31,7 +31,7 @@ const AdminPage = () => {
         const response = await fetch("/api/getenquirydata");
         if (response.ok) {
           const data = await response.json();
-          console.log("Fetched enquiries:", data); // Log fetched data for debugging
+          console.log("Fetched enquiries:", data); 
           setEnquiries(data);
           setSearchResults(data);
         } else {
@@ -52,7 +52,7 @@ const AdminPage = () => {
         enquiry.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         enquiry.phoneNumber.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    console.log("Filtered results:", filteredResults); // Log filtered results for debugging
+    console.log("Filtered results:", filteredResults); 
     setSearchResults(filteredResults);
     setIsSubmitted(true);
     setSearchTerm("");

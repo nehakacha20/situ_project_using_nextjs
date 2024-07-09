@@ -37,7 +37,7 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
       const nights = differenceInDays(checkOut, checkIn);
       setNumberOfNights(nights);
     } else {
-      setNumberOfNights(0); // Reset number of nights if check-in or check-out is not selected
+      setNumberOfNights(0); 
     }
   };
 
@@ -92,7 +92,7 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
         isClosable: true,
         position: "bottom",
       });
-      return; // Exit early if any required field is missing
+      return; 
     }
 
     const formData = {
