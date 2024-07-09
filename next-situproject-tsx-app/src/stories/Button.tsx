@@ -2,11 +2,19 @@ import React from 'react';
 import './button.css';
 
 interface ButtonProps {
+<<<<<<< HEAD
  
   primary?: boolean;
   
   backgroundColor?: string;
   
+=======
+  
+  primary?: boolean;
+ 
+  backgroundColor?: string;
+ 
+>>>>>>> 771d7a355e5ee234471cdd0c15d68c207e52fa7e
   size?: 'small' | 'medium' | 'large';
   
   label: string;

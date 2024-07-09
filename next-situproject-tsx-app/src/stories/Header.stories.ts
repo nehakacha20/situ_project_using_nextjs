@@ -8,7 +8,11 @@ const meta = {
   
   tags: ['autodocs'],
   parameters: {
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> 771d7a355e5ee234471cdd0c15d68c207e52fa7e
     layout: 'fullscreen',
   },
   args: {
