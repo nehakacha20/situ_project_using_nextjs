@@ -55,7 +55,7 @@ const EnquiryForm = ({ property, bookedRanges, onFormSubmit }) => {
     }
   };
 
-  let totalPriceToStay = (pricePerNight: , numberOfNights, minprize) => {
+  let totalPriceToStay = (pricePerNight , numberOfNights, minprize) => {
     if (numberOfNights === 0) {
       return pricePerNight;
     }
