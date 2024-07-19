@@ -42,5 +42,16 @@
     "phoneNumber": "+449767468579",
     "message": "",
     "totalPrice": 300
+  },
+  {
+    "propertyAddress": "Exeter, England, UK",
+    "checkInDate": "2024-07-30",
+    "checkOutDate": "2024-07-30",
+    "numberOfNights": 0,
+    "name": "john doe",
+    "email": "sample@123.com",
+    "phoneNumber": "+447812346778",
+    "message": "",
+    "totalPrice": 150
   }
 ]
